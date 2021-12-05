@@ -1,0 +1,64 @@
+/* start landing page */
+.landing-page {
+  min-height: 100vh;
+  background-image: url("./../../../img/slider-01.jpg");
+  background-size: cover;
+  position: relative;
+  header {
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    padding: 10px;
+    .logo {
+      width: 300px;
+      padding: 15px;
+      font-weight: bold;
+    }
+    ul {
+      width: 100%;
+      text-align: right;
+      padding-right: 20px;
+      font-size: 15px;
+      li {
+        display: inline-block;
+        margin-left: 10px;
+        a {
+          text-decoration: none;
+          color: white;
+          transition: all 0.3s ease-out;
+          &:hover,
+          &.active {
+            color: var(--main-color);
+            border-bottom: 1px solid var(--main-color);
+          }
+        }
+      }
+    }
+  }
+
+  .introduction {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+
+    h1 {
+      span {
+        color: var(--main-color);
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+    }
+    p {
+      line-height: 1.7;
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+}
+
+/* start landing page */
