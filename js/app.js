@@ -1,3 +1,23 @@
+let myLocal = localStorage.getItem("color-opt");
+
+if (myLocal !== null) {
+  document.documentElement.style.setProperty("--main-color", myLocal);
+
+  document.querySelectorAll(".colors-list li").forEach((ele) => {
+    ele.classList.remove("active");
+
+    if (ele.dataset.color === myLocal) {
+      ele.classList.add("active");
+    }
+  });
+}
+
+let backgroundOpt = true;
+
+//variable to control the interval
+
+let backgroundInterval;
+
 // Toggle Setting button
 let gear = document.querySelector(".toggle-setting i");
 let setBox = document.querySelector(".setting-box");
@@ -15,8 +35,36 @@ colorsLi.forEach((li) => {
       "--main-color",
       e.target.dataset.color
     );
+    localStorage.setItem("color-opt", e.target.dataset.color);
+
+    e.target.parentElement.querySelectorAll(".active").forEach((ele) => {
+      ele.classList.remove("active");
+    });
+
+    e.target.classList.add("active");
   });
 });
+
+// Switch Random Background Option
+const randomBackgroundEl = document.querySelectorAll(".random-bg span");
+
+randomBackgroundEl.forEach((span) =>
+  span.addEventListener("click", (e) => {
+    e.target.parentElement
+      .querySelectorAll(".active")
+      .forEach((ele) => ele.classList.remove("active"));
+    e.target.classList.add("active");
+
+    if (e.target.dataset.background === "yes") {
+      backgroundOpt = true;
+      randomImgs();
+    } else {
+      backgroundOpt = false;
+      clearInterval(backgroundInterval);
+    }
+  })
+);
+
 // Auto Select background for header
 let landingPage = document.querySelector(".landing-page");
 
@@ -29,9 +77,12 @@ let imgsArray = [
   "slider-06.jpg",
 ];
 
-setInterval(function () {
-  let numRand = Math.floor(Math.random() * imgsArray.length);
-  landingPage.style.backgroundImage = `url('./../img/${imgsArray[numRand]}')`;
-  // "url('./../img/" + imgsArray[numRand] + " ')";
-  // console.log(numRand);
-}, 2000);
+function randomImgs() {
+  if (backgroundOpt) {
+    backgroundInterval = setInterval(function () {
+      let numRand = Math.floor(Math.random() * imgsArray.length);
+      landingPage.style.backgroundImage = `url('./../img/${imgsArray[numRand]}')`;
+    }, 1000);
+  }
+}
+randomImgs();

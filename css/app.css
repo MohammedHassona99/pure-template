@@ -85,13 +85,23 @@ ol {
   padding: 20px;
 }
 
+.setting-box .setting-container .option-color {
+  padding: 10px;
+  text-align: center;
+  background-color: #eee;
+  margin: 10px;
+}
+
 .setting-box .setting-container .option-color h4 {
   margin: 0;
   color: #666;
+  font-size: 14px;
 }
 
 .setting-box .setting-container .option-color .colors-list {
   text-align: center;
+  padding: 0;
+  margin: 10px 0 0;
 }
 
 .setting-box .setting-container .option-color .colors-list li {
@@ -100,12 +110,12 @@ ol {
   background-color: #000;
   border-radius: 50%;
   cursor: pointer;
-  opacity: 0.5;
+  border: 3px solid transparent;
   display: inline-block;
 }
 
 .setting-box .setting-container .option-color .colors-list li.active {
-  opacity: 1;
+  border-color: #fff;
 }
 
 .setting-box .setting-container .option-color .colors-list li:first-child {
@@ -126,6 +136,33 @@ ol {
 
 .setting-box .setting-container .option-color .colors-list li:nth-child(5) {
   background-color: #4caf50;
+}
+
+.setting-box .setting-container .option-bg {
+  text-align: center;
+}
+
+.setting-box .setting-container .option-bg h4 {
+  font-size: 14px;
+}
+
+.setting-box .setting-container .option-bg .random-bg .yes,
+.setting-box .setting-container .option-bg .random-bg .no {
+  width: 50px;
+  background-color: #009688;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.setting-box .setting-container .option-bg .random-bg .yes.active,
+.setting-box .setting-container .option-bg .random-bg .no.active {
+  opacity: 1;
 }
 
 /* End Setting box */
