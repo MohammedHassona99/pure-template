@@ -11,12 +11,33 @@ if (myLocal !== null) {
     }
   });
 }
-
+//random bg-option
 let backgroundOpt = true;
 
 //variable to control the interval
-
 let backgroundInterval;
+
+// check if there is local storage random bg-item
+let bg_localItem = localStorage.getItem("background-option");
+
+// check if the random local storage is empty or no
+if (bg_localItem !== null) {
+  if (bg_localItem === "true") {
+    bg_localItem = true;
+  } else {
+    bg_localItem = false;
+  }
+
+  document
+    .querySelectorAll(".random-bg span")
+    .forEach((ele) => ele.classList.remove("active"));
+
+  if (bg_localItem === "true") {
+    document.querySelector(".random-bg .yes").classList.add("active");
+  } else {
+    document.querySelector(".random-bg .no").classList.add("active");
+  }
+}
 
 // Toggle Setting button
 let gear = document.querySelector(".toggle-setting i");
@@ -58,9 +79,11 @@ randomBackgroundEl.forEach((span) =>
     if (e.target.dataset.background === "yes") {
       backgroundOpt = true;
       randomImgs();
+      localStorage.setItem("background-option", true);
     } else {
       backgroundOpt = false;
       clearInterval(backgroundInterval);
+      localStorage.setItem("background-option", false);
     }
   })
 );
@@ -85,4 +108,4 @@ function randomImgs() {
     }, 1000);
   }
 }
-randomImgs();
+// randomImgs();

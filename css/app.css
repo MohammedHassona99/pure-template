@@ -238,4 +238,82 @@ ol {
 }
 
 /* start landing page */
+/* Start About us */
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-us .info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.about-us .info h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+
+.about-us .info p {
+  line-height: 1.8;
+  color: #767676;
+  margin: 0;
+}
+
+.about-us .img-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.about-us .img-info img {
+  width: 250px;
+}
+
+/* End About us */
+/* Start Our Skills */
+.our-skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+}
+
+.our-skills h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--main-color);
+  margin: 0 0 50px;
+}
+
+.our-skills .box-skill {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.our-skills .box-skill .name {
+  text-align: center;
+  font-weight: bold;
+  width: 100px;
+  line-height: 30px;
+}
+
+.our-skills .box-skill .progress {
+  height: 30px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+/* End Our Skills */
 /*# sourceMappingURL=app.css.map */

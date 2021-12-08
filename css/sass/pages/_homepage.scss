@@ -62,3 +62,68 @@
 }
 
 /* start landing page */
+
+/* Start About us */
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  .info {
+    flex: 1;
+    h2 {
+      font: {
+        size: 30px;
+        weight: bold;
+      }
+      color: var(--main-color);
+      margin: 0 0 10px;
+    }
+    p {
+      line-height: 1.8;
+      color: #767676;
+      margin: 0;
+    }
+  }
+  .img-info {
+    flex: 1;
+    text-align: center;
+    img {
+      width: 250px;
+    }
+  }
+}
+/* End About us */
+
+/* Start Our Skills */
+.our-skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+  h2 {
+    font: {
+      size: 30px;
+      weight: bold;
+    }
+    text-align: center;
+    color: var(--main-color);
+    margin: 0 0 50px;
+  }
+  .box-skill {
+    background-color: #fff;
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+    .name {
+      text-align: center;
+      font-weight: bold;
+      width: 100px;
+      line-height: 30px;
+    }
+    .progress {
+      height: 30px;
+      width: 100%;
+      background-color: #ddd;
+    }
+  }
+}
+/* End Our Skills */
