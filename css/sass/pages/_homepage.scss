@@ -96,8 +96,7 @@
 
 /* Start Our Skills */
 .our-skills {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0;
   background-color: #eee;
   h2 {
     font: {
@@ -116,14 +115,54 @@
     .name {
       text-align: center;
       font-weight: bold;
-      width: 100px;
+      width: 140px;
       line-height: 30px;
     }
     .progress {
       height: 30px;
-      width: 100%;
-      background-color: #ddd;
+      width: calc(100% - 150px);
+      background-color: #f6f6f6;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: var(--main-color);
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
 }
 /* End Our Skills */
+/* Start Gallery */
+.gallery {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h2 {
+    font: {
+      size: 30px;
+      weight: bold;
+    }
+    text-align: center;
+    color: var(--main-color);
+    margin: 0 0 50px;
+  }
+  .images-box {
+    text-align: center;
+    img {
+      width: 200px;
+      height: 160px;
+      padding: 3px;
+      background-color: #f6f6f6;
+      border: 1px solid #ccc;
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+}
+/* End Gallery */

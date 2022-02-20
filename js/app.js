@@ -12,7 +12,7 @@ if (myLocal !== null) {
   });
 }
 //random bg-option
-let backgroundOpt = true;
+let backgroundOpt = false;
 
 //variable to control the interval
 let backgroundInterval;
@@ -108,4 +108,81 @@ function randomImgs() {
     }, 1000);
   }
 }
-// randomImgs();
+randomImgs();
+
+// set our skills
+
+let ourSkills = document.querySelector(".our-skills");
+
+window.onscroll = function () {
+  // Our Skills offset Top
+  let ourSkillOffsetTop = ourSkills.offsetTop;
+
+  // our Skills Outer Height
+  let outSkillOuterHeight = ourSkills.offsetHeight;
+
+  //window height
+  let windowsHeight = this.innerHeight;
+
+  // window scroll top
+  let windowScrollTop = this.pageYOffset;
+
+  if (
+    windowScrollTop >
+    ourSkillOffsetTop + outSkillOuterHeight - windowsHeight
+  ) {
+    let allSpan = document.querySelectorAll(".box-skill .progress span");
+
+    allSpan.forEach((skill) => (skill.style.width = skill.dataset.progress));
+  }
+};
+
+// Create popup With the Image
+
+let ourGallery = document.querySelectorAll(".gallery .images-box img");
+
+ourGallery.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    // Create Overlay Element
+    let overlay = document.createElement("div");
+
+    // add Class To Overlay
+    overlay.className = "popup-overlay";
+
+    // append overlay to the body
+    document.body.appendChild(overlay);
+
+    // create the popup Box
+    let popupBox = document.createElement("div");
+
+    //add class to the popup box
+    popupBox.className = "popup-box";
+
+    if (img.alt !== null) {
+      //Create Heading
+      let imgHeading = document.createElement("h3");
+
+      //create text for heading
+      let imgText = document.createTextNode(img.alt);
+
+      //append The text to the heading
+      imgHeading.appendChild(imgText);
+
+      //append the heading to the popup box
+
+      popupBox.appendChild(imgHeading);
+    }
+
+    // create the image
+    let popupImage = document.createElement("img");
+
+    // set Image Source
+    popupImage.src = img.src;
+
+    // add Image to popup Box
+    popupBox.appendChild(popupImage);
+
+    // Append The popup Box To body
+    document.body.appendChild(popupBox);
+  });
+});
