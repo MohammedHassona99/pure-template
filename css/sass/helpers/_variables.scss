@@ -1,8 +1,8 @@
-$maxMobile: "(max-width: 767px)";
-$maxSmall: "(max-width:991px)";
-$minSmall: "(min-width: 768px)";
-$minMedium: "(min-width: 992px)";
-$minLarge: "(min-width: 1200px)";
+$mobile: "(min-width: 576px)";
+$small: "(min-width:768px)";
+$medium: "(min-width: 992px)";
+$large: "(min-width: 1200px)";
+$xLarge: "(min-width: 1400px)";
 :root {
   --main-color: #ff9800;
 }

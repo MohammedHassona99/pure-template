@@ -262,3 +262,14 @@ bulletsSpan.forEach((span) => {
     }
   });
 });
+
+// Reset Button Options
+let buttonReset = document.querySelector(".reset-option");
+
+buttonReset.addEventListener("click", function () {
+  localStorage.clear();
+  // localStorage.removeItem("bullets-op");
+  // localStorage.removeItem("color-opt");
+  // localStorage.removeItem("background-option");
+  window.location.reload();
+});

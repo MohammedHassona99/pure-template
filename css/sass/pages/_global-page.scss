@@ -10,14 +10,25 @@ body {
 .container {
   margin: auto;
   padding: 0 15px;
-  @media #{$minSmall} {
-    width: 750px;
+  @media #{$mobile} {
+    /* 576px */
+    max-width: 540px;
   }
-  @media #{$minMedium} {
-    width: 970px;
+  @media #{$small} {
+    /* 768px */
+    max-width: 720px;
   }
-  @media #{$minLarge} {
-    width: 1170px;
+  @media #{$medium} {
+    /* 992px */
+    max-width: 960px;
+  }
+  @media #{$large} {
+    /*1200px*/
+    max-width: 1140px;
+  }
+  @media #{$xLarge} {
+    /*1400px */
+    max-width: 1380px;
   }
 }
 ul,
@@ -126,6 +137,19 @@ ol {
         }
       }
     }
+  }
+
+  .reset-option {
+    background-color: #f44336;
+    border: none;
+    width: 160px;
+    display: block;
+    margin: 10px auto;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
 /* End Setting box */
