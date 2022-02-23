@@ -166,3 +166,221 @@
   }
 }
 /* End Gallery */
+/* Start time line*/
+.timeline {
+  padding: 50px 0;
+  background-color: #eee;
+  .timeline-content {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background-color: var(--main-color);
+      top: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+    .year {
+      margin: 20px auto;
+      width: 50px;
+      background-color: var(--main-color);
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      border-radius: 4px;
+      color: #fff;
+      padding: 2px 5px;
+      font-weight: bold;
+    }
+
+    .left,
+    .right {
+      width: calc(50% - 25px);
+      margin-bottom: 40px;
+      position: relative;
+
+      .content {
+        background-color: #fff;
+        padding: 20px;
+
+        h3 {
+          font-weight: bold;
+          color: var(--main-color);
+          margin: 0 0 10px;
+        }
+        p {
+          color: #666;
+          margin: 0;
+          line-height: 1.6;
+        }
+      }
+    }
+    .left {
+      float: left;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        border: 3px solid var(--main-color);
+        right: -35px;
+        top: 20px;
+        border-radius: 50%;
+      }
+      .content::before {
+        content: "";
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent transparent transparent #fff;
+        height: 0;
+        width: 0;
+        position: absolute;
+        right: -20px;
+        top: 20px;
+      }
+    }
+    .right {
+      float: right;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        border: 3px solid var(--main-color);
+        left: -35px;
+        top: 20px;
+        border-radius: 50%;
+      }
+      .content::before {
+        content: "";
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent #fff transparent transparent;
+        height: 0;
+        width: 0;
+        position: absolute;
+        left: -20px;
+        top: 20px;
+      }
+    }
+  }
+}
+/* End time line*/
+
+/* Start Feature */
+.our-features {
+  padding: 80px 0;
+  h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin: 0 0 60px;
+    text-align: center;
+  }
+  .feat-box {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+    img {
+      max-width: 128px;
+    }
+    h4 {
+      font-size: 20px;
+      margin: 15px 0 40px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background-color: var(--main-color);
+        left: 50%;
+        margin-left: -20px;
+        bottom: -22px;
+      }
+    }
+    p {
+      width: 80%;
+      margin: 0 auto;
+      color: #706f6f;
+      line-height: 1.7;
+    }
+  }
+}
+/* End Feature */
+/* Start Testimonial */
+.testimonial {
+  overflow: hidden;
+  position: relative;
+  padding: 80px 0;
+  h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+    margin: 0 0 30px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    margin: 0 0 30px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #333;
+  }
+  .ts-box {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: calc(97% / 3);
+    background-color: #ccc;
+    padding: 20px;
+
+    &:not(:last-of-type) {
+      margin-right: 1%;
+    }
+
+    > p {
+      margin: 0 0 20px;
+      line-height: 1.5;
+      font-size: 1.1em;
+      color: #707070;
+      font-style: italic;
+    }
+    .person-info {
+      display: flex;
+      img {
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      h4 {
+        margin: 15px 0 5px;
+        p {
+          margin: 0;
+          color: #707070;
+        }
+      }
+    }
+  }
+}
+/* End Testimonial */

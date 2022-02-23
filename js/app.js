@@ -184,5 +184,81 @@ ourGallery.forEach((img) => {
 
     // Append The popup Box To body
     document.body.appendChild(popupBox);
+
+    //create the close span
+    let closeSpan = document.createElement("span");
+
+    //Create the close button text
+    let spanCloseButton = document.createTextNode("X");
+
+    // append text to class button
+    closeSpan.appendChild(spanCloseButton);
+
+    //add class to close button
+    closeSpan.className = "close-button";
+
+    //add the close span to the popup box
+    popupBox.appendChild(closeSpan);
+  });
+});
+
+// close span
+
+document.addEventListener("click", function (e) {
+  if (e.target.className === "close-button") {
+    // remove the current popup
+    e.target.parentNode.remove();
+
+    //remove overlay
+
+    document.querySelector(".popup-overlay").remove();
+  }
+});
+
+// Select all bullets
+const allBullets = document.querySelectorAll(".nav-bull ul li");
+
+allBullets.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    document.querySelector(e.target.dataset.section).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+// show Bullets
+
+let bulletsSpan = document.querySelectorAll(".bullets-op span");
+let navBull = document.querySelector(".nav-bull");
+let bulletLocalItem = localStorage.getItem("bullets-op");
+
+if (bulletLocalItem !== null) {
+  bulletsSpan.forEach((span) => {
+    span.classList.remove("active");
+  });
+
+  if (bulletLocalItem === "block") {
+    navBull.style.display = "block";
+    document.querySelector(".bullets-op .yes").classList.add("active");
+  } else {
+    navBull.style.display = "none";
+    document.querySelector(".bullets-op .no").classList.add("active");
+  }
+}
+
+bulletsSpan.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    e.target.parentElement
+      .querySelectorAll(".active")
+      .forEach((ele) => ele.classList.remove("active"));
+    e.target.classList.add("active");
+
+    if (span.dataset.display === "show") {
+      navBull.style.display = "block";
+      localStorage.setItem("bullets-op", "block");
+    } else {
+      navBull.style.display = "none";
+      localStorage.setItem("bullets-op", "none");
+    }
   });
 });
