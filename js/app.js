@@ -273,3 +273,29 @@ buttonReset.addEventListener("click", function () {
   // localStorage.removeItem("background-option");
   window.location.reload();
 });
+
+// toggle Menu
+
+let buttonToggle = document.querySelector(".toggle-menu");
+let tLinks = document.querySelector(".links-content ul");
+
+buttonToggle.addEventListener("click", function (e) {
+  e.stopPropagation();
+  this.classList.toggle("menu-active");
+  tLinks.classList.toggle("open");
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target !== buttonToggle && e.target !== tLinks) {
+    //check the menu is open
+    if (tLinks.classList.contains("open")) {
+      buttonToggle.classList.toggle("menu-active");
+      tLinks.classList.toggle("open");
+    }
+  }
+});
+
+// Stop Propagation to menu
+tLinks.onclick = function (e) {
+  e.stopPropagation();
+};

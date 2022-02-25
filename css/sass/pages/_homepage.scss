@@ -15,23 +15,71 @@
       padding: 15px;
       font-weight: bold;
     }
-    ul {
+    .links-content {
       width: 100%;
       text-align: right;
-      padding-right: 20px;
-      font-size: 15px;
-      li {
-        display: inline-block;
-        margin-left: 10px;
-        a {
-          text-decoration: none;
-          color: white;
-          transition: all 0.3s ease-out;
-          &:hover,
-          &.active {
-            color: var(--main-color);
-            border-bottom: 1px solid var(--main-color);
+      ul {
+        font-size: 15px;
+        display: none;
+        li {
+          display: inline-block;
+          margin-left: 10px;
+          a {
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease-out;
+            &:hover,
+            &.active {
+              color: var(--main-color);
+              border-bottom: 1px solid var(--main-color);
+            }
           }
+        }
+        @media #{$medium} {
+          display: block;
+        }
+        &.open {
+          background-color: #fff;
+          padding: 10px;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 55px;
+          width: 100%;
+          border-radius: 5px;
+          text-align: left;
+          li {
+            display: block;
+          }
+          a {
+            color: var(--main-color);
+            font-weight: bold;
+          }
+        }
+      }
+      .toggle-menu {
+        background-color: transparent;
+        border: none;
+        width: 40px;
+        margin-top: 15px;
+        cursor: pointer;
+        display: none;
+        position: relative;
+        i {
+          font-size: 30px;
+          color: white;
+        }
+        @media (max-width: 991px) {
+          display: inline-block;
+        }
+        &.menu-active::before {
+          content: "";
+          position: absolute;
+          left: 10px;
+          bottom: -13px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent white transparent;
         }
       }
     }
@@ -386,7 +434,6 @@
 /* End Testimonial */
 /* Start Contact Us */
 .contact-us {
-  min-height: 600px;
   padding: 50px 0;
   background-image: url("./../../../img/contact.png");
   background-size: cover;
@@ -456,3 +503,12 @@
   }
 }
 /* End Contact Us */
+
+/* Start Footer */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+}
+/* End Footer */

@@ -338,28 +338,89 @@ ol {
   font-weight: bold;
 }
 
-.landing-page header ul {
+.landing-page header .links-content {
   width: 100%;
   text-align: right;
-  padding-right: 20px;
-  font-size: 15px;
 }
 
-.landing-page header ul li {
+.landing-page header .links-content ul {
+  font-size: 15px;
+  display: none;
+}
+
+.landing-page header .links-content ul li {
   display: inline-block;
   margin-left: 10px;
 }
 
-.landing-page header ul li a {
+.landing-page header .links-content ul li a {
   text-decoration: none;
   color: white;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-.landing-page header ul li a:hover, .landing-page header ul li a.active {
+.landing-page header .links-content ul li a:hover, .landing-page header .links-content ul li a.active {
   color: var(--main-color);
   border-bottom: 1px solid var(--main-color);
+}
+
+@media (min-width: 992px) {
+  .landing-page header .links-content ul {
+    display: block;
+  }
+}
+
+.landing-page header .links-content ul.open {
+  background-color: #fff;
+  padding: 10px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.landing-page header .links-content ul.open li {
+  display: block;
+}
+
+.landing-page header .links-content ul.open a {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.landing-page header .links-content .toggle-menu {
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  margin-top: 15px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+}
+
+.landing-page header .links-content .toggle-menu i {
+  font-size: 30px;
+  color: white;
+}
+
+@media (max-width: 991px) {
+  .landing-page header .links-content .toggle-menu {
+    display: inline-block;
+  }
+}
+
+.landing-page header .links-content .toggle-menu.menu-active::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -13px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
 }
 
 .landing-page .introduction {
@@ -756,7 +817,6 @@ ol {
 /* End Testimonial */
 /* Start Contact Us */
 .contact-us {
-  min-height: 600px;
   padding: 50px 0;
   background-image: url("./../../../img/contact.png");
   background-size: cover;
@@ -846,4 +906,13 @@ ol {
 }
 
 /* End Contact Us */
+/* Start Footer */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+}
+
+/* End Footer */
 /*# sourceMappingURL=app.css.map */
